@@ -3,12 +3,12 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var del = require('del');
-
+var size = require('gulp-filesize');
 var Server = require("karma").Server;
 
 var config = {
     //Include all js files but exclude any min.js files
-    src: ['js/**/*.js', '!js/**/*.min.js']
+    src: ['js/**/*.js','!js/tests/*.spec.js', '!js/**/*.min.js']
 }
 
 //delete the output file(s)
@@ -27,7 +27,8 @@ gulp.task('scripts', ['clean'], function () {
     return gulp.src(config.src)
       .pipe(uglify())
       .pipe(concat('all.min.js'))
-      .pipe(gulp.dest('js/'));
+      .pipe(gulp.dest('js/'))
+      .pipe(size());
 });
 
 gulp.task("unit-tests", function (done) {
