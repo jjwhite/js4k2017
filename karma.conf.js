@@ -13,7 +13,9 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'js/game/main.js',
+            'js/game/creature.js',
             'js/game/player.js',
+            'js/game/weapon.js',
             'js/tests/*.spec.js'
         ],
 

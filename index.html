@@ -15,7 +15,20 @@
 
 	<body>  
 		<!-- include the main game file -->
+        <script src="js/game/utility.js"></script>
         <script src="js/game/main.js"></script>
+        <script src="js/game/creature.js"></script>
 		<script src="js/game/player.js"></script>
+        <script src="js/game/weapon.js"></script>
+        <script src="js/game/encounter.js"></script>
+
+        <script type="text/javascript">
+            var p = new Game.player("Jon", 15, 15, 15, 15, 15);
+            p.wpn = new Game.weapon("Sword", 2, 6, 2, 0);
+
+            var c = new Game.creature("creature", 15, 13);
+            c.wpn = new Game.weapon("Axe", 1, 8, 1, 1);
+
+        </script>
 	</body>
 </html>
